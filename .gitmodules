@@ -1,0 +1,3 @@
+[submodule "wp-content/themes/munsa-lite-mod"]
+	path = wp-content/themes/munsa-lite-mod
+	url = git@github.com:phhu/munsa-lite-mod.git

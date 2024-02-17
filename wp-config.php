@@ -131,3 +131,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
+
+
+
+$_SERVER['REQUEST_URI'] = str_replace("/wp-admin/", "/wptest/wp-admin/",  $_SERVER['REQUEST_URI']);
+
+
+if ( isset( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) ) {
+if ( 'https' == $_SERVER['HTTP_X_FORWARDED_PROTO'] ) {
+$_SERVER['HTTPS'] = 'on';
+}
+}
+if ( isset( $_SERVER['HTTP_X_REAL_IP'] ) ) {
+$_SERVER['REMOTE_ADDR'] = $_SERVER['HTTP_X_REAL_IP'];
+}
